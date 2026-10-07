@@ -1,102 +1,173 @@
-## String Manipulation Practice
+# String Manipulation Practice
 
-Create a Python program that processes four messy strings and produces the required output. You must start with the strings exactly as provided and use string methods to clean or reorganize them; do not simply type the corrected values yourself.
+## Basic Premise
 
-This activity uses the capitalization, whitespace removal, `split()`, `replace()`, and `join()` methods from the lesson, along with converting numeric strings using `int()` or `float()`.
+You will be given four separate Python files. Each file contains a variable named `string_to_process` with a different messy string.
 
-### String 1 — Clean a Name
+Your task is to write code underneath the provided variable that processes the string into the required format and prints the result. You must use the value stored in `string_to_process`; do not replace it with a manually corrected string.
 
-Starting string:
+### `format_name.py`
+
+The file will begin with:
 
 ```python
-name = "   aLeX mOrGaN   "
+string_to_process = "   sMitH, aLeX    "
 ```
 
-Requirements:
-- Remove the extra whitespace from the beginning and end.
-- Correct the capitalization so each part of the name begins with a capital letter.
-- Print the finished name.
-
-Expected output:
+Process the string so that the output is:
 
 ```text
-Alex Morgan
+Alex Smith
 ```
 
-### String 2 — Clean a Status Message
+### `format_title.py`
 
-Starting string:
+The file will begin with:
 
 ```python
-status = "WARNING::ENGINE_OVERHEAT::SECTOR_7"
+string_to_process = "t H e , T a L e :: O f , T w O :: c I t I e S"
 ```
 
-Requirements:
-- Convert all letters to lowercase.
-- Replace each `::` with ` | `.
-- Replace each `_` with a space.
-- Print the finished status message.
-
-Expected output:
+Process the string so that the output is:
 
 ```text
-warning | engine overheat | sector 7
+The Tale Of Two Cities
 ```
 
-### String 3 — Organize Module Names
+### `format_list.py`
 
-Starting string:
+The file will begin with:
 
 ```python
-modules = "navigation|life_support|cargo_bay|engine_control"
+string_to_process = "eggs,cheese,milk,bread,cereal"
 ```
 
-Requirements:
-- Separate the string wherever `|` appears.
-- Replace the underscores in each module name with spaces.
-- Format each module name using title capitalization.
-- Join the module names back into one string separated by `, `.
-- Print the finished string.
-
-Expected output:
+Process the string so that the output is:
 
 ```text
-Navigation, Life Support, Cargo Bay, Engine Control
+EGGS | CHEESE | MILK | BREAD | CEREAL
 ```
 
-### String 4 — Process Sensor Readings
+### `process_numbers.py`
 
-Starting string:
+The file will begin with:
 
 ```python
-readings = "  18,27,35,20  "
+string_to_process = "  18,27,35,20  "
 ```
 
-Requirements:
-- Remove the unnecessary whitespace.
-- Separate the four values.
-- Convert each value from a string into an integer.
-- Calculate the total of all four readings.
-- Calculate the average of the four readings.
-- Print the total and average.
-
-Expected output:
+Process the values as numbers and produce:
 
 ```text
 Total: 100
 Average: 25.0
 ```
 
----
+## Basic File Structure
 
-## String Cleanup Challenge — 20 Marks
+Your starter folder will contain:
 
-| Assessment Item                  | Criteria                                                                                                                                          |                                                                                                    Marks |
-|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------:|
-| ☐ String 1 — Name Cleanup       | Removes the extra whitespace, corrects the capitalization, and produces `Alex Morgan`.                                                            |                                                                                                        3 |
-| ☐ String 2 — Status Message     | Converts the text to lowercase, replaces `::` with `\|`, replaces underscores with spaces, and produces the required formatted message. | 4 |
-| ☐ String 3 — Module Names       | Splits the original string at `\|`, cleans each module name, applies title capitalization, and joins the values back together using `, `. | 5 |
-| ☐ String 4 — Sensor Readings    | Cleans and splits the string, converts all four values to numbers, correctly calculates the total, and correctly calculates the average.          |                                                                                                        6 |
-| ☐ Appropriate String Processing | Uses string methods and numeric casting to transform the provided starting strings rather than manually replacing them with the expected answers. |                                                                                                        2 |
-|                                  | **Total**                                                                                                                                         |                                                                                                   **20** |
+```text
+basic/
+├── format_list.py
+├── format_name.py
+├── format_title.py
+└── process_numbers.py
+```
 
+## Basic Requirements
+
+* [ ] In `format_name.py`, remove unnecessary whitespace, format the name so each part begins with a capital letter, remove the comma, and reorder the first and last name.
+* [ ] In `format_title.py`, convert the text so each word starts with a capital letter, replace punctuation with spaces, and remove unnecessary white space.
+* [ ] In `format_list.py`, separate the items, change the text to uppercase, and join the items using ` | `.
+* [ ] In `process_numbers.py`, clean and separate the values and convert each value from a string into an integer.
+* [ ] In `process_numbers.py`, calculate and print the total and average of the readings.
+* [ ] Use appropriate string methods such as `strip()`, `split()`, `replace()`, `title()`, `lower()`, and `join()` rather than manually replacing `string_to_process` with the finished answer.
+* [ ] Use `print()` in each file to display its processed result.
+
+> Fully completing the Basic Requirements earns **16/20 marks, or 80%**.
+
+## Basic Assessment — 16 Marks
+
+| Assessment Item | Criteria | Marks |
+|---|---|---:|
+| Name Formatting | Correctly removes unnecessary whitespace, removes the comma, reorders the first and last name, and applies appropriate capitalization. | 3 |
+| Title Formatting | Correctly removes the unwanted punctuation and whitespace and formats the result using title capitalization. | 4 |
+| List Formatting | Correctly separates the comma-separated items, converts them to uppercase, and joins them using ` | `. | 3 |
+| Number Processing | Correctly cleans and separates the numeric values, converts them to integers, and calculates the total and average. | 4 |
+| Appropriate String Processing | Uses appropriate string methods and numeric conversion to process `string_to_process` rather than manually replacing it with the expected result. | 2 |
+|  | **Total** | **16** |
+
+## Advanced Premise
+
+Combine the four types of processing from the Basic activity into a single interactive program.
+
+The program should first ask the user **how they would like their string to be processed**. It should then ask the user to enter a new string and apply the selected processing method.
+
+The available options should be:
+
+```text
+1. Format a Name
+2. Format a Title
+3. Format a List
+4. Process Numbers
+```
+
+You can begin by copying the processing code from your four Basic files into `main.py` and modifying it so that each option works with user input instead of the original `string_to_process` values.
+
+The program should continue running safely when the user enters invalid information rather than crashing.
+
+## Advanced File Structure
+
+Your starter folder will contain:
+
+```text
+advanced/
+└── main.py
+```
+
+## Advanced Requirements
+
+* [ ] Display the four processing options and use `input()` to ask the user which option they want to use.
+* [ ] Ask the user for a new string and apply the selected processing method using the same rules as the corresponding Basic challenge.
+* [ ] Ensure that all four processing options work with new input rather than relying on the original Basic strings.
+* [ ] Validate the menu selection and any input that must follow a specific format, such as a name requiring a first and last name or numbers requiring numeric values.
+* [ ] Use error handling so invalid input does not cause the program to crash.
+* [ ] When invalid input is entered, clearly explain the problem and allow the user to try again.
+
+Interacting with the program could look like this (as an example):
+
+```text
+Choose how you would like to process a string:
+
+1. Format a Name
+2. Format a Title
+3. Format a List
+4. Process Numbers
+
+Enter your choice: 3
+Enter the string to process: apples,oranges,bananas,grapes
+
+Processed String:
+APPLES | ORANGES | BANANAS | GRAPES
+```
+
+Another example could be:
+
+```text
+Enter your choice: 4
+Enter the string to process: 12,18,25,5
+
+Total: 60
+Average: 15.0
+```
+
+## Advanced Assessment — 4 Marks
+
+| Assessment Item | Criteria | Marks |
+|---|---|---:|
+| Interactive Processing | Allows the user to select any of the four processing options, enter a new string, and receive the correctly processed result. | 1 |
+| Reusable Processing | Successfully adapts the processing from the Basic activity so all four methods work with different user-provided values. | 1 |
+| Input Validation | Checks menu selections and formatted input where necessary and prevents invalid values from being processed. | 1 |
+| Error Handling and Recovery | Prevents expected input errors from crashing the program, explains invalid input, and allows the user to try again. | 1 |
+|  | **Total** | **4** |
